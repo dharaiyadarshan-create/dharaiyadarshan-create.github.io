@@ -2,8 +2,65 @@
 <html>
 <head>
   <title>GujPsych</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevents scrollbars */
+      background-color: #f0f0f0;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #floating-h1 {
+      position: absolute;
+      white-space: nowrap;
+      font-family: Arial, sans-serif;
+      color: #2c3e50;
+      margin: 0;
+      padding: 10px;
+      cursor: default;
+      user-select: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>GujPsych Repository Coming Soon on this page</h1>
+
+  <h1 id="floating-h1">GujPsych Repository Coming Soon on this page</h1>
+
+  <script>
+    const box = document.getElementById('floating-h1');
+    let x = Math.random() * (window.innerWidth - box.clientWidth);
+    let y = Math.random() * (window.innerHeight - box.clientHeight);
+    let xSpeed = 2; // Change these numbers to adjust speed
+    let ySpeed = 2;
+
+    function animate() {
+      x += xSpeed;
+      y += ySpeed;
+
+      // Check for wall collisions
+      if (x + box.clientWidth >= window.innerWidth || x <= 0) {
+        xSpeed = -xSpeed;
+      }
+      if (y + box.clientHeight >= window.innerHeight || y <= 0) {
+        ySpeed = -ySpeed;
+      }
+
+      box.style.left = x + 'px';
+      box.style.top = y + 'px';
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Adjust if window is resized
+    window.addEventListener('resize', () => {
+      x = Math.min(x, window.innerWidth - box.clientWidth);
+      y = Math.min(y, window.innerHeight - box.clientHeight);
+    });
+  </script>
+
 </body>
 </html>
