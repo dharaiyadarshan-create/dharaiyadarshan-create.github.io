@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GujPsych Repository — About</title>
@@ -51,7 +50,43 @@
   .submit-note { background: var(--purple-pale); border: 1px solid #d4c4e8; border-radius: 6px; padding: 1.25rem 1.5rem; margin-top: 2rem; font-size: 0.85rem; color: var(--ink-light); line-height: 1.7; }
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--ink-muted); background: var(--cream-dark); }
   footer a { color: var(--purple); text-decoration: none; }
-  @media (max-width: 768px) { nav { gap: 1rem; } nav a:not(.nav-submit) { display: none; } }
+  @media (max-width: 768px) {
+  /* Layout */
+  main { padding: 2rem 1rem; }
+  /* Navigation */
+  nav { 
+    flex-wrap: wrap; 
+    gap: 0.5rem; 
+  }
+  nav a { 
+    font-size: 0.75rem; 
+  }
+  /* Hero */
+  .hero { 
+    padding: 2.5rem 1rem 2rem; 
+  }
+  .hero h1 { 
+    font-size: 2rem; 
+  }
+  .hero p { 
+    font-size: 0.9rem; 
+  }
+  /* Grid */
+  .about-grid { 
+    grid-template-columns: 1fr; 
+  }
+  /* Maintainer */
+  .maintainer-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  /* Buttons */
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 
   .hero { padding: 5rem 2rem 3rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
@@ -73,8 +108,7 @@
   .disclaimer-box h3 { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple); margin-bottom: 1rem; }
   .disclaimer-box p { font-size: 0.825rem; color: var(--ink-light); line-height: 1.75; margin-bottom: 0.75rem; }
   .disclaimer-box p:last-child { margin-bottom: 0; }
-  @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.2rem; } }
-
+  
 </style>
 </head>
 <body>
