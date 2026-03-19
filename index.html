@@ -6,21 +6,21 @@
     body {
       margin: 0;
       padding: 0;
-      overflow: hidden; /* Prevents scrollbars */
-      background-color: #f0f0f0;
+      overflow: hidden; /* Prevents scrollbars from appearing during animation */
+      background-color: #ffffff;
       height: 100vh;
       width: 100vw;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     #floating-h1 {
       position: absolute;
       white-space: nowrap;
-      font-family: Arial, sans-serif;
-      color: #2c3e50;
       margin: 0;
-      padding: 10px;
+      padding: 15px;
       cursor: default;
       user-select: none;
+      transition: color 0.1s ease; /* Smooths the color transition */
     }
   </style>
 </head>
@@ -30,32 +30,52 @@
 
   <script>
     const box = document.getElementById('floating-h1');
+    
+    // Initial Position
     let x = Math.random() * (window.innerWidth - box.clientWidth);
     let y = Math.random() * (window.innerHeight - box.clientHeight);
-    let xSpeed = 2; // Change these numbers to adjust speed
-    let ySpeed = 2;
+    
+    // Movement Speed (Increase these numbers to make it faster)
+    let xSpeed = 3;
+    let ySpeed = 3;
+
+    // Function to generate a random hex color
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
 
     function animate() {
       x += xSpeed;
       y += ySpeed;
 
-      // Check for wall collisions
+      // Horizontal Wall Collision
       if (x + box.clientWidth >= window.innerWidth || x <= 0) {
-        xSpeed = -xSpeed;
-      }
-      if (y + box.clientHeight >= window.innerHeight || y <= 0) {
-        ySpeed = -ySpeed;
+        xSpeed = -xSpeed; // Reverse direction
+        box.style.color = getRandomColor(); // Change color
       }
 
+      // Vertical Wall Collision
+      if (y + box.clientHeight >= window.innerHeight || y <= 0) {
+        ySpeed = -ySpeed; // Reverse direction
+        box.style.color = getRandomColor(); // Change color
+      }
+
+      // Apply the new position
       box.style.left = x + 'px';
       box.style.top = y + 'px';
 
       requestAnimationFrame(animate);
     }
 
+    // Start the animation
     animate();
 
-    // Adjust if window is resized
+    // Handle window resizing to keep the text within bounds
     window.addEventListener('resize', () => {
       x = Math.min(x, window.innerWidth - box.clientWidth);
       y = Math.min(y, window.innerHeight - box.clientHeight);
