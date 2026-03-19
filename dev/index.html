@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GujPsych Repository — About</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --cream: #f5f0e8; --cream-dark: #ede8de; --cream-darker: #e0d9cc;
+    --ink: #1a1410; --ink-light: #3d3530; --ink-muted: #7a706a;
+    --purple: #6b4f8a; --purple-light: #9b7ab8; --purple-pale: #f0eaf6;
+    --border: #d4cdc0; --white: #faf8f4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); font-size: 15px; line-height: 1.7; }
+  header { background: var(--cream); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; padding: 0 2rem; }
+  .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; text-decoration: none; }
+  .logo span { color: var(--purple); }
+  nav { display: flex; gap: 2rem; align-items: center; }
+  nav a { font-size: 0.85rem; font-weight: 400; color: var(--ink-light); text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+  nav a:hover { color: var(--purple); }
+  nav a.active { color: var(--purple); font-weight: 500; }
+  .nav-submit { background: var(--purple); color: white !important; padding: 0.45rem 1.1rem; border-radius: 4px; font-weight: 500 !important; transition: background 0.2s !important; }
+  .nav-submit:hover { background: var(--purple-light) !important; color: white !important; }
+  main { min-height: calc(100vh - 64px); padding: 4rem 2rem; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .page-header { padding-bottom: 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; }
+  .page-header .tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 0.75rem; display: block; }
+  .page-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; }
+  .page-header p { font-size: 0.9rem; color: var(--ink-muted); max-width: 560px; }
+  .btn-primary { background: var(--purple); color: white; padding: 0.75rem 1.75rem; border-radius: 4px; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: background 0.2s; cursor: pointer; border: none; display: inline-block; }
+  .btn-primary:hover { background: var(--purple-light); }
+  .btn-secondary { background: transparent; color: var(--ink); padding: 0.75rem 1.75rem; border-radius: 4px; font-size: 0.875rem; font-weight: 500; text-decoration: none; border: 1px solid var(--border); transition: border-color 0.2s; cursor: pointer; display: inline-block; }
+  .btn-secondary:hover { border-color: var(--purple); color: var(--purple); }
+  .badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.03em; }
+  .badge-published { background: #e8f5e9; color: #2e7d32; }
+  .badge-thesis { background: #e3f2fd; color: #1565c0; }
+  .badge-iec { background: #fff3e0; color: #e65100; }
+  .badge-free { background: #f3e5f5; color: #6a1b9a; }
+  .badge-copyright { background: #fce4ec; color: #880e4f; }
+  .badge-unknown { background: var(--cream-dark); color: var(--ink-muted); }
+  .scales-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .scales-table th { text-align: left; padding: 0.75rem 1rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); border-bottom: 2px solid var(--border); background: var(--cream-dark); }
+  .scales-table td { padding: 0.9rem 1rem; border-bottom: 1px solid var(--border); color: var(--ink-light); vertical-align: top; }
+  .scales-table tr:hover td { background: var(--cream-dark); }
+  .scales-table td:first-child { font-weight: 500; color: var(--ink); }
+  .submit-note { background: var(--purple-pale); border: 1px solid #d4c4e8; border-radius: 6px; padding: 1.25rem 1.5rem; margin-top: 2rem; font-size: 0.85rem; color: var(--ink-light); line-height: 1.7; }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--ink-muted); background: var(--cream-dark); }
+  footer a { color: var(--purple); text-decoration: none; }
+  @media (max-width: 768px) { nav { gap: 1rem; } nav a:not(.nav-submit) { display: none; } }
+
+
+  .hero { padding: 5rem 2rem 3rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+  .hero-tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 1rem; display: block; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 300; line-height: 1.15; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 1.5rem; max-width: 680px; }
+  .hero h1 em { font-style: italic; color: var(--purple); }
+  .hero p { font-size: 1rem; color: var(--ink-light); max-width: 580px; line-height: 1.8; margin-bottom: 2rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+  .about-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1.75rem; }
+  .about-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--ink); }
+  .about-card p { font-size: 0.875rem; color: var(--ink-light); line-height: 1.7; }
+  .maintainer-box { background: var(--purple-pale); border: 1px solid #d4c4e8; border-radius: 6px; padding: 1.75rem; margin-bottom: 2rem; display: flex; align-items: flex-start; gap: 1.5rem; }
+  .maintainer-avatar { width: 52px; height: 52px; background: var(--purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; flex-shrink: 0; }
+  .maintainer-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .maintainer-info p { font-size: 0.825rem; color: var(--ink-light); margin-bottom: 0.25rem; }
+  .maintainer-info a { font-size: 0.825rem; color: var(--purple); text-decoration: none; }
+  .disclaimer-box { background: var(--cream-dark); border: 1px solid var(--border); border-left: 3px solid var(--purple); border-radius: 4px; padding: 1.75rem; margin-bottom: 2rem; }
+  .disclaimer-box h3 { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--purple); margin-bottom: 1rem; }
+  .disclaimer-box p { font-size: 0.825rem; color: var(--ink-light); line-height: 1.75; margin-bottom: 0.75rem; }
+  .disclaimer-box p:last-child { margin-bottom: 0; }
+  @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.2rem; } }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">GujPsych <span>Repository</span></a>
+    <nav>
+      <a href="scales.html">Scales</a>
+      <a href="awareness.html">Awareness</a>
+      <a href="gethelp.html">Get Help</a>
+      <a href="index.html" class="active">About</a>
+      <a href="submit.html" class="nav-submit">Submit a Resource</a>
+    </nav>
+  </div>
+</header>
+<main style="padding:0 2rem 4rem;">
+  <div class="container">
+    <div class="hero">
+      <span class="hero-tag">Open Access · Gujarati Mental Health</span>
+      <h1>A centralized repository for <em>Gujarati</em> mental health resources</h1>
+      <p>GujPsych Repository compiles psychometric scales, translated instruments, and awareness materials available in the Gujarati language for use in clinical practice and research. All resources are community-contributed and openly accessible.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="scales.html">Browse Scales</a>
+        <a class="btn-secondary" href="submit.html">Contribute a Resource</a>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>What is this repository?</h3>
+        <p>A centralized open-access database of psychometric scales, clinical assessment tools, and mental health awareness materials that have been translated, adapted, or validated in the Gujarati language.</p>
+      </div>
+      <div class="about-card">
+        <h3>Who is it for?</h3>
+        <p>Psychiatrists, psychologists, researchers, postgraduate students, and clinicians working with Gujarati-speaking populations in clinical or research settings.</p>
+      </div>
+      <div class="about-card">
+        <h3>How are resources added?</h3>
+        <p>Any researcher, clinician, or student may submit a resource via the submission form. Submissions require documentation — a published paper, thesis, or IEC approval number.</p>
+      </div>
+      <div class="about-card">
+        <h3>Founding reference</h3>
+        <p>This repository was established alongside a scoping review of Gujarati psychometric scales. The review identified 55 instruments and highlighted the need for a centralized accessible resource.</p>
+      </div>
+    </div>
+    <div class="maintainer-box">
+      <div class="maintainer-avatar">D</div>
+      <div class="maintainer-info">
+        <h4>Dr Darshankumar D.</h4>
+        <p>MBBS, MD, DNB Psychiatry</p>
+        <p>Repository Maintainer</p>
+        <p style="margin-top:0.75rem;">
+      <a href="https://orcid.org/0009-0009-9351-8602" target="_blank" style="color:var(--purple);text-decoration:none;margin-right:1.25rem;">
+        🔗 ORCID
+      </a>
+      <a href="https://www.researchgate.net/profile/Darshankumar-Dharaiya" target="_blank" style="color:var(--purple);text-decoration:none;margin-right:1.25rem;">
+        🔬 ResearchGate
+      </a>
+      <a href="https://doi.org/10.32614/CRAN.package.scaledescr" target="_blank" style="color:var(--purple);text-decoration:none;">
+        📦 scaledescr (R Package)
+      </a>
+    </p>
+        <a href="mailto:dharaiya.darshan@gmail.com">dharaiya.darshan@gmail.com</a>
+      </div>
+    </div>
+    <div class="disclaimer-box">
+      <h3>Disclaimer</h3>
+      <p>This website is maintained voluntarily by an individual academic for educational and reference purposes only. It does not represent the views or positions of any institution, hospital, professional body, or employer.</p>
+      <p>All resources listed or hosted on this website have been submitted by contributors or compiled from publicly available sources. The site maintainer makes no representations or warranties, express or implied, regarding the accuracy, completeness, currency, reliability, or clinical suitability of any resource listed here. Users are solely and entirely responsible for independently verifying the accuracy, validity, and appropriateness of any resource before use in clinical practice, research, or any other context.</p>
+      <p>This website does not provide clinical advice. No resource listed here should be used as a substitute for professional clinical judgment.</p>
+      <p>Many psychometric instruments listed on this website are protected by copyright and are the intellectual property of their respective developers, publishers, or rights holders. Listing a scale on this website does not imply permission to reproduce, distribute, or use it without appropriate authorization. Users must independently verify the copyright status of any instrument and obtain necessary permissions from the relevant rights holder before use. The site maintainer accepts no responsibility for copyright infringement by users.</p>
+      <p>The site maintainer accepts no liability whatsoever for any direct, indirect, incidental, or consequential loss, damage, or harm arising from the use of, or reliance upon, any resource, information, or material available on this website, regardless of how such loss or damage arises.</p>
+      <p>Inclusion of a resource on this website does not constitute endorsement of its quality, validity, or fitness for any particular purpose by the site maintainer.</p>
+      <p>This website is provided on an "as is" basis without any guarantee of availability, continuity, or maintenance. The site maintainer reserves the right to modify, remove, or discontinue any content or the website itself at any time without notice.</p>
+      <p><strong>By accessing and using this website, you acknowledge that you have read, understood, and agreed to this disclaimer in full.</strong></p>
+    </div>
+  </div>
+</main>
+<div id="footer-placeholder"></div></body>
+<script>
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+</script>
+
+</body>
+</html>
+</html>
