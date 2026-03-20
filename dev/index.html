@@ -110,26 +110,10 @@
         <p>This repository was established alongside a scoping review of Gujarati psychometric scales. The review identified 55 instruments and highlighted the need for a centralized accessible resource.</p>
       </div>
     </div>
-    <div class="maintainer-box">
-      <div class="maintainer-avatar">D</div>
-      <div class="maintainer-info">
-        <h4>Dr Darshankumar D.</h4>
-        <p>MBBS, MD, DNB Psychiatry</p>
-        <p>Repository Maintainer</p>
-        <p style="margin-top:0.75rem;">
-      <a href="https://orcid.org/0009-0009-9351-8602" target="_blank" style="color:var(--purple);text-decoration:none;margin-right:1.25rem;">
-        🔗 ORCID
-      </a>
-      <a href="https://www.researchgate.net/profile/Darshankumar-Dharaiya" target="_blank" style="color:var(--purple);text-decoration:none;margin-right:1.25rem;">
-        🔬 ResearchGate
-      </a>
-      <a href="https://doi.org/10.32614/CRAN.package.scaledescr" target="_blank" style="color:var(--purple);text-decoration:none;">
-        📦 scaledescr (R Package)
-      </a>
-    </p>
-        <a href="mailto:dharaiya.darshan@gmail.com">dharaiya.darshan@gmail.com</a>
-      </div>
-    </div>
+
+    <div id="maintainer-slot"></div>
+     fetch('maintainer.html').then(r => r.text()).then(html => {document.getElementById('maintainer-slot').innerHTML = html;
+});
     <div class="disclaimer-box">
       <h3>Disclaimer</h3>
       <p>This website is maintained voluntarily by an individual academic for educational and reference purposes only. It does not represent the views or positions of any institution, hospital, professional body, or employer.</p>
@@ -147,22 +131,24 @@
 <div id="footer-placeholder"></div></body>
 
 <script>
-
   fetch('nav.html')
-  .then(r => r.text())
-  .then(html => {
-    document.getElementById('nav-placeholder').innerHTML = html;
-    const current = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('#main-nav a').forEach(a => {
-      if (a.getAttribute('href') === current) a.classList.add('active');
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('nav-placeholder').innerHTML = html;
+      const current = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('#main-nav a').forEach(a => {
+        if (a.getAttribute('href') === current) a.classList.add('active');
+      });
     });
-  });
-  
+
   fetch('footer.html')
     .then(r => r.text())
     .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+
+  fetch('maintainer.html')
+    .then(r => r.text())
+    .then(html => document.getElementById('maintainer-slot').innerHTML = html);
 </script>
 
 </body>
-</html>
 </html>
