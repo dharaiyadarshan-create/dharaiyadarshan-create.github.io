@@ -1,86 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>GujPsych</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden; /* Prevents scrollbars from appearing during animation */
-      background-color: #ffffff;
-      height: 100vh;
-      width: 100vw;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GujPsych Repository — About</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-    #floating-h1 {
-      position: absolute;
-      white-space: nowrap;
-      margin: 0;
-      padding: 15px;
-      cursor: default;
-      user-select: none;
-      transition: color 0.1s ease; /* Smooths the color transition */
-    }
-  </style>
+<link href="https://fonts.googleapis.com/..." rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
 
-  <h1 id="floating-h1">GujPsych Repository Coming Soon on this page</h1>
+<div id="nav-placeholder"></div>
 
-  <script>
-    const box = document.getElementById('floating-h1');
+<main style="padding:0 2rem 4rem;">
+  <div class="container">
+    <div class="hero">
+      <span class="hero-tag">Open Access · Gujarati Mental Health</span>
+      <h1>A centralized repository for <em>Gujarati</em> mental health resources</h1>
+      <p>GujPsych Repository compiles psychometric scales, translated instruments, and awareness materials available in the Gujarati language for use in clinical practice and research. All resources are community-contributed and openly accessible.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="scales.html">Browse Scales</a>
+        <a class="btn-secondary" href="submit.html">Contribute a Resource</a>
+      </div>
+    </div>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>What is this repository?</h3>
+        <p>A centralized open-access database of psychometric scales, clinical assessment tools, and mental health awareness materials that have been translated, adapted, or validated in the Gujarati language.</p>
+      </div>
+      <div class="about-card">
+        <h3>Who is it for?</h3>
+        <p>Psychiatrists, psychologists, researchers, postgraduate students, and clinicians working with Gujarati-speaking populations in clinical or research settings.</p>
+      </div>
+      <div class="about-card">
+        <h3>How are resources added?</h3>
+        <p>Any researcher, clinician, or student may submit a resource via the submission form. Submissions require documentation — a published paper, thesis, or IEC approval number.</p>
+      </div>
+      <div class="about-card">
+        <h3>Founding reference</h3>
+        <p>This repository was established alongside a scoping review of Gujarati psychometric scales. The review identified 55 instruments and highlighted the need for a centralized accessible resource.</p>
+      </div>
+    </div>
+
+    <div id="maintainer-slot"></div>
     
-    // Initial Position
-    let x = Math.random() * (window.innerWidth - box.clientWidth);
-    let y = Math.random() * (window.innerHeight - box.clientHeight);
-    
-    // Movement Speed (Increase these numbers to make it faster)
-    let xSpeed = 3;
-    let ySpeed = 3;
+    <div class="disclaimer-box">
+      <h3>Disclaimer</h3>
+      <p>This website is maintained voluntarily by an individual academic for educational and reference purposes only. It does not represent the views or positions of any institution, hospital, professional body, or employer.</p>
+      <p>All resources listed or hosted on this website have been submitted by contributors or compiled from publicly available sources. The site maintainer makes no representations or warranties, express or implied, regarding the accuracy, completeness, currency, reliability, or clinical suitability of any resource listed here. Users are solely and entirely responsible for independently verifying the accuracy, validity, and appropriateness of any resource before use in clinical practice, research, or any other context.</p>
+      <p>This website does not provide clinical advice. No resource listed here should be used as a substitute for professional clinical judgment.</p>
+      <p>Many psychometric instruments listed on this website are protected by copyright and are the intellectual property of their respective developers, publishers, or rights holders. Listing a scale on this website does not imply permission to reproduce, distribute, or use it without appropriate authorization. Users must independently verify the copyright status of any instrument and obtain necessary permissions from the relevant rights holder before use. The site maintainer accepts no responsibility for copyright infringement by users.</p>
+      <p>The site maintainer accepts no liability whatsoever for any direct, indirect, incidental, or consequential loss, damage, or harm arising from the use of, or reliance upon, any resource, information, or material available on this website, regardless of how such loss or damage arises.</p>
+      <p>Inclusion of a resource on this website does not constitute endorsement of its quality, validity, or fitness for any particular purpose by the site maintainer.</p>
+      <p>This website is provided on an "as is" basis without any guarantee of availability, continuity, or maintenance. The site maintainer reserves the right to modify, remove, or discontinue any content or the website itself at any time without notice.</p>
+      <p><strong>By accessing and using this website, you acknowledge that you have read, understood, and agreed to this disclaimer in full.</strong></p>
+    </div>
+  </div>
+</main>
 
-    // Function to generate a random hex color
-    function getRandomColor() {
-      const letters = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
+<div id="footer-placeholder"></div></body>
 
-    function animate() {
-      x += xSpeed;
-      y += ySpeed;
+<script>
+  fetch('nav.html')
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById('nav-placeholder').innerHTML = html;
 
-      // Horizontal Wall Collision
-      if (x + box.clientWidth >= window.innerWidth || x <= 0) {
-        xSpeed = -xSpeed; // Reverse direction
-        box.style.color = getRandomColor(); // Change color
-      }
-
-      // Vertical Wall Collision
-      if (y + box.clientHeight >= window.innerHeight || y <= 0) {
-        ySpeed = -ySpeed; // Reverse direction
-        box.style.color = getRandomColor(); // Change color
-      }
-
-      // Apply the new position
-      box.style.left = x + 'px';
-      box.style.top = y + 'px';
-
-      requestAnimationFrame(animate);
-    }
-
-    // Start the animation
-    animate();
-
-    // Handle window resizing to keep the text within bounds
-    window.addEventListener('resize', () => {
-      x = Math.min(x, window.innerWidth - box.clientWidth);
-      y = Math.min(y, window.innerHeight - box.clientHeight);
+    // Active link
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#main-nav a').forEach(a => {
+      if (a.getAttribute('href') === current) a.classList.add('active');
     });
-  </script>
+
+    // Hamburger — must run AFTER nav is injected
+    const btn = document.querySelector('.hamburger');
+    const nav = document.getElementById('main-nav');
+
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('open');
+    });
+
+    document.querySelectorAll('#main-nav a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        btn.classList.remove('open');
+      });
+    });
+  });
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+
+  fetch('maintainer.html')
+    .then(r => r.text())
+    .then(html => document.getElementById('maintainer-slot').innerHTML = html);
+</script>
 
 </body>
 </html>

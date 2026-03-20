@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GujPsych Repository — Scales</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/..." rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<main>
+  <div class="container">
+    <div class="page-header">
+      <span class="tag">Psychometric Instruments</span>
+      <h2>Gujarati Psychometric Scales</h2>
+      <p>Scales translated, adapted, or validated for use with Gujarati-speaking populations. Search by name or filter by domain or documentation type.</p>
+    </div>
+    <div class="table-controls">
+      <input class="search-input" type="text" id="scaleSearch" placeholder="Search by scale name..." oninput="filterScales()">
+      <select class="filter-select" id="domainFilter" onchange="filterScales()">
+        <option value="">All Domains</option>
+        <option value="Depression & Anxiety">Depression &amp; Anxiety</option>
+        <option value="Cognition">Cognition</option>
+        <option value="Quality of Life">Quality of Life</option>
+        <option value="Sleep">Sleep</option>
+        <option value="Caregiver">Caregiver</option>
+        <option value="Stress & Coping">Stress &amp; Coping</option>
+        <option value="Child & Adolescent">Child &amp; Adolescent</option>
+        <option value="Stigma">Stigma</option>
+        <option value="Substance Use">Substance Use</option>
+        <option value="Burnout & Occupational">Burnout &amp; Occupational</option>
+        <option value="Personality & Self-Concept">Personality &amp; Self-Concept</option>
+        <option value="Clinical Assessment Tools">Clinical Assessment Tools</option>
+        <option value="Other">Other</option>
+      </select>
+      <select class="filter-select" id="docFilter" onchange="filterScales()">
+        <option value="">All Documentation</option>
+        <option value="Published">Published</option>
+        <option value="Thesis">Thesis</option>
+        <option value="IEC">IEC Documented</option>
+        <option value="Unknown">Unknown</option>
+      </select>
+    </div>
+    <table class="scales-table" id="scalesTable">
+      <thead>
+        <tr>
+          <th>Scale Name</th><th>Domain</th><th>Documentation</th><th>Copyright</th><th>Reference</th>
+        </tr>
+      </thead>
+      <tbody id="scalesBody">
+        <tr><td>Brief Patient Health Questionnaire (BPHQ)</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.4103/0022-3859.32209" target="_blank" style="color:var(--purple);text-decoration:none;">Kochhar et al., 2007</a></td></tr>
+        <tr><td>GAD-7</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-unknown">Unknown</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://www.phqscreeners.com" target="_blank" style="color:var(--purple);text-decoration:none;">PHQ Screeners website</a></td></tr>
+        <tr><td>PHQ-9</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-unknown">Unknown</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://www.phqscreeners.com" target="_blank" style="color:var(--purple);text-decoration:none;">PHQ Screeners website</a></td></tr>
+        <tr><td>General Health Questionnaire (GHQ-60)</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3010712/" target="_blank" style="color:var(--purple);text-decoration:none;">Bagadia et al., 1985</a></td></tr>
+        <tr><td>Hospital Anxiety and Depression Scale (HADS)</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-unknown">Unknown</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://eprovide.mapi-trust.org/instruments/hospital-anxiety-and-depression-scale" target="_blank" style="color:var(--purple);text-decoration:none;">MAPI Trust</a></td></tr>
+        <tr><td>Depression Anxiety Stress Scale (DASS-42)</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-unknown">Unknown</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://www2.psy.unsw.edu.au/groups/dass/" target="_blank" style="color:var(--purple);text-decoration:none;">DASS website</a></td></tr>
+        <tr><td>Depression Anxiety Stress Scale (DASS-21)</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.51957/Healthline5702023" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma et al., 2023</a></td></tr>
+        <tr><td>CES-DC</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.7860/JCDR/2019/41001.13377" target="_blank" style="color:var(--purple);text-decoration:none;">Chapla et al., 2019</a></td></tr>
+        <tr><td>Edinburgh Postnatal Depression Scale (EPDS)</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://www.researchgate.net/publication/382461911" target="_blank" style="color:var(--purple);text-decoration:none;">Desai et al., 2011</a></td></tr>
+        <tr><td>Geriatric Depression Scale-15 (GDS-15)</td><td>Depression &amp; Anxiety</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.5455/ijmsph.2014.110920143" target="_blank" style="color:var(--purple);text-decoration:none;">Desai et al., 2014</a></td></tr>
+        <tr><td>Addenbrooke's Cognitive Examination-III (ACE-III)</td><td>Cognition</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.7860/JCDR/2018/30694.11696" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma et al., 2018</a></td></tr>
+        <tr><td>Montreal Cognitive Assessment (MoCA)</td><td>Cognition</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.36106/ijsr/8702792" target="_blank" style="color:var(--purple);text-decoration:none;">Agnani &amp; Bhise, 2023</a></td></tr>
+        <tr><td>KABC-II Subtests (Number Recall, Word Order, Triangles)</td><td>Cognition</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.4103/IJPSYM.IJPSYM_104_18" target="_blank" style="color:var(--purple);text-decoration:none;">Patel et al., 2018</a></td></tr>
+        <tr><td>Rowland Universal Dementia Assessment Scale (RUDAS)</td><td>Cognition</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.52403/ijrr.20240183" target="_blank" style="color:var(--purple);text-decoration:none;">Agrawal &amp; Sutariya, 2024</a></td></tr>
+        <tr><td>Mini-Mental State Examination (MMSE)</td><td>Cognition</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.1002/(SICI)1099-1166(199712)12:12<1155::AID-GPS705>3.0.CO;2-E" target="_blank" style="color:var(--purple);text-decoration:none;">Lindesay et al., 1997</a></td></tr>
+        <tr><td>Pittsburgh Sleep Quality Index (PSQI)</td><td>Sleep</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://www.jcdr.net/articles/PDF/15535/47598_CE[Ra1]_F(T)_PF1(PT_OM)_PFA(OM)_PN(KM).pdf" target="_blank" style="color:var(--purple);text-decoration:none;">Nariya &amp; Khatri, 2021</a></td></tr>
+        <tr><td>Epworth Sleepiness Scale (ESS)</td><td>Sleep</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.7860/JCDR/2022/52494.16064" target="_blank" style="color:var(--purple);text-decoration:none;">Nariya &amp; Khatri, 2022</a></td></tr>
+        <tr><td>WHOQOL-BREF</td><td>Quality of Life</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.4103/indianjpsychiatry.indianjpsychiatry_391_23" target="_blank" style="color:var(--purple);text-decoration:none;">Chauhan et al., 2024</a></td></tr>
+        <tr><td>WHO-5 Well-Being Index</td><td>Quality of Life</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://www.researchgate.net/publication/366640293" target="_blank" style="color:var(--purple);text-decoration:none;">Dalal &amp; Khatri, 2022</a></td></tr>
+        <tr><td>SF-12</td><td>Quality of Life</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://dx.doi.org/10.21275/SR22125094811" target="_blank" style="color:var(--purple);text-decoration:none;">Bais &amp; Thakrar, 2022</a></td></tr>
+        <tr><td>SF-36</td><td>Quality of Life</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.4103/ijsp.ijsp_86_20" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma et al., 2022</a></td></tr>
+        <tr><td>RAND-36</td><td>Quality of Life</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.52403/ijshr.20211008" target="_blank" style="color:var(--purple);text-decoration:none;">Jani et al., 2021</a></td></tr>
+        <tr><td>EORTC QLQ-C30 &amp; QLQ-H&amp;N35</td><td>Quality of Life</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.1007/s12070-020-02126-y" target="_blank" style="color:var(--purple);text-decoration:none;">Parkar et al., 2020</a></td></tr>
+        <tr><td>Recovering Quality of Life Questionnaire (ReQoL)</td><td>Quality of Life</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://www.researchgate.net/publication/358106745" target="_blank" style="color:var(--purple);text-decoration:none;">Vankar et al., 2022</a></td></tr>
+        <tr><td>Q-LES-Q-SF</td><td>Quality of Life</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://www.researchgate.net/publication/389257253" target="_blank" style="color:var(--purple);text-decoration:none;">Tanna et al., 2025</a></td></tr>
+        <tr><td>Flourishing Scale</td><td>Quality of Life</td><td><span class="badge badge-thesis">Thesis</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="http://hdl.handle.net/10603/550720" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma, 2023 (PhD Thesis)</a></td></tr>
+        <tr><td>Caregiver Burden Scale</td><td>Caregiver</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://www.researchgate.net/publication/380405018" target="_blank" style="color:var(--purple);text-decoration:none;">Patel et al., 2023</a></td></tr>
+        <tr><td>Zarit Burden Interview</td><td>Caregiver</td><td><span class="badge badge-unknown">Unknown</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://eprovide.mapi-trust.org/instruments/zarit-burden-interview" target="_blank" style="color:var(--purple);text-decoration:none;">MAPI Trust</a></td></tr>
+        <tr><td>Parental Stress Scale</td><td>Caregiver</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://www.researchgate.net/publication/371019330" target="_blank" style="color:var(--purple);text-decoration:none;">Ramanandi et al., 2023</a></td></tr>
+        <tr><td>Perceived Stress Scale-14</td><td>Stress &amp; Coping</td><td><span class="badge badge-thesis">Thesis</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="http://hdl.handle.net/10603/550720" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma, 2023 (PhD Thesis)</a></td></tr>
+        <tr><td>Perceived Stress Questionnaire</td><td>Stress &amp; Coping</td><td><span class="badge badge-thesis">Thesis</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="http://hdl.handle.net/10603/550720" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma, 2023 (PhD Thesis)</a></td></tr>
+        <tr><td>Brief-COPE</td><td>Stress &amp; Coping</td><td><span class="badge badge-thesis">Thesis</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="http://hdl.handle.net/10603/550720" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma, 2023 (PhD Thesis)</a></td></tr>
+        <tr><td>Brief Resilient Coping Scale</td><td>Stress &amp; Coping</td><td><span class="badge badge-thesis">Thesis</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="http://hdl.handle.net/10603/550720" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma, 2023 (PhD Thesis)</a></td></tr>
+        <tr><td>Coping Strategies Inventory Short-Form (CSI-SF)</td><td>Stress &amp; Coping</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://doi.org/10.4103/ijsp.ijsp_86_20" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma et al., 2022</a></td></tr>
+        <tr><td>Strengths and Difficulties Questionnaire (SDQ)</td><td>Child &amp; Adolescent</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.7860/JCDR/2018/34087.11840" target="_blank" style="color:var(--purple);text-decoration:none;">Varma et al., 2018</a></td></tr>
+        <tr><td>Short Sensory Profile (SSP)</td><td>Child &amp; Adolescent</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.52403/ijhsr.20250515" target="_blank" style="color:var(--purple);text-decoration:none;">Rasania &amp; Desai, 2025</a></td></tr>
+        <tr><td>Attitudes to Mental Illness Questionnaire (AMIQ)</td><td>Stigma</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://doi.org/10.4103/aip.aip_23_17" target="_blank" style="color:var(--purple);text-decoration:none;">Shah et al., 2017</a></td></tr>
+        <tr><td>Community Attitudes toward Mental Illness (CAMI-III)</td><td>Stigma</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://doi.org/10.30877/IJMH.3.4.2016.473-485" target="_blank" style="color:var(--purple);text-decoration:none;">Lakdawala &amp; Vankar, 2016</a></td></tr>
+        <tr><td>Fagerstrom Test for Nicotine Dependence – Smokeless Tobacco (FTND-ST)</td><td>Substance Use</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://doi.org/10.4103/psychiatry.IndianJPsychiatry_87_18" target="_blank" style="color:var(--purple);text-decoration:none;">Patel et al., 2019</a></td></tr>
+        <tr><td>Maslach Burnout Inventory – Medical Personnel Survey (MBI-MPS)</td><td>Burnout &amp; Occupational</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.1371/journal.pone.0229954" target="_blank" style="color:var(--purple);text-decoration:none;">Koval et al., 2020</a></td></tr>
+        <tr><td>Professional Quality of Life Scale (ProQOL-5)</td><td>Burnout &amp; Occupational</td><td><span class="badge badge-thesis">Thesis</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="http://hdl.handle.net/10603/550720" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma, 2023 (PhD Thesis)</a></td></tr>
+        <tr><td>Workplace Wellbeing Questionnaire</td><td>Burnout &amp; Occupational</td><td><span class="badge badge-thesis">Thesis</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="http://hdl.handle.net/10603/550720" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma, 2023 (PhD Thesis)</a></td></tr>
+        <tr><td>Rosenberg Self-Esteem Scale</td><td>Personality &amp; Self-Concept</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.7860/JCDR/2019/41001/13377" target="_blank" style="color:var(--purple);text-decoration:none;">Chapla et al., 2019</a></td></tr>
+        <tr><td>Spiritual Well-Being Scale (SWBS)</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.25259/IJPC_271_2024" target="_blank" style="color:var(--purple);text-decoration:none;">Vaishnav et al., 2025</a></td></tr>
+        <tr><td>Columbia Suicide Severity Rating Scale (C-SSRS)</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-copyright">Copyrighted</span></td><td><a href="https://doi.org/10.1016/j.jval.2014.08.1923" target="_blank" style="color:var(--purple);text-decoration:none;">Anderson et al., 2014</a></td></tr>
+        <tr><td>Nomophobia Questionnaire</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.7860/JCDR/2024/69973.19866" target="_blank" style="color:var(--purple);text-decoration:none;">Patel &amp; Shah, 2024</a></td></tr>
+        <tr><td>Eating Attitudes Test-26 (EAT-26)</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.4103/ipj.ipj_28_20" target="_blank" style="color:var(--purple);text-decoration:none;">Raval et al., 2022</a></td></tr>
+        <tr><td>Bulimic Investigatory Test Edinburgh (BITE)</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.4103/ipj.ipj_28_20" target="_blank" style="color:var(--purple);text-decoration:none;">Raval et al., 2022</a></td></tr>
+        <tr><td>Brief Illness Perception Questionnaire</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://doi.org/10.4103/ijves.ijves_92_23" target="_blank" style="color:var(--purple);text-decoration:none;">Gohil et al., 2024</a></td></tr>
+        <tr><td>Fatigue Severity Scale</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://doi.org/10.18231/j.jsip.2019.003" target="_blank" style="color:var(--purple);text-decoration:none;">Sharma &amp; Sheth, 2019</a></td></tr>
+        <tr><td>Menopause Rating Scale</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-free">Free</span></td><td><a href="https://doi.org/10.4103/ijcm.ijcm_163_20" target="_blank" style="color:var(--purple);text-decoration:none;">Tank et al., 2021</a></td></tr>
+        <tr><td>Walking Impairment Questionnaire</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://doi.org/10.1016/j.jvn.2023.11.003" target="_blank" style="color:var(--purple);text-decoration:none;">Naiyra et al., 2024</a></td></tr>
+        <tr><td>Middlesex Hospital Questionnaire</td><td>Other</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td>Gada MT, 1981</td></tr>
+        <tr><td>Capacity Assessment for Treatment Decisions including Admission</td><td>Clinical Assessment Tools</td><td><span class="badge badge-published">Published</span></td><td><span class="badge badge-unknown">Unknown</span></td><td><a href="https://www.researchgate.net/publication/395998230" target="_blank" style="color:var(--purple);text-decoration:none;">ResearchGate</a></td></tr>
+        <tr>
+        <td>Severity of Alcohol Dependence Questionnaire (SADQ)</td>
+        <td>Substance Use</td>
+        <td><span class="badge badge-thesis">Thesis</span></td>
+        <td><span class="badge badge-unknown">Unknown</span></td>
+        <td>Soni, 2023 (DNB Thesis, Hospital for Mental Health Vadodara),unpublished manuscript</td>
+        </tr>
+        <tr>
+            <td>Standardised Assessment of Personality – Abbreviated Scale (SAPAS)</td>
+            <td>Personality &amp; Self-Concept</td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td><span class="badge badge-copyright">Copyrighted</span></td>
+            <td>Unpublished — manuscript in preparation</td>
+          </tr>
+          <tr>
+            <td>Level of Personality Functioning Scale – Brief Form 2.0 (LPFS-BF 2.0)</td>
+            <td>Personality &amp; Self-Concept</td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td><span class="badge badge-free">Free</span></td>
+            <td>Unpublished — manuscript in preparation</td>
+          </tr>
+          <tr>
+            <td>Brief Emotion Dysregulation Scale (BEDS)</td>
+            <td>Other</td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td>Unpublished — manuscript in preparation</td>
+          </tr>
+          <tr>
+            <td>WHO Adverse Childhood Experiences – International Questionnaire (ACE-IQ)</td>
+            <td>Other</td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td><span class="badge badge-free">Free</span></td>
+            <td>Unpublished — manuscript in preparation</td>
+          </tr>
+          <tr>
+            <td>Revised Benevolent Childhood Experiences Scale (RBCES)</td>
+            <td>Other</td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td>Unpublished — manuscript in preparation</td>
+          </tr>
+          <tr>
+            <td>Metacognitions Questionnaire – 30 (MCQ-30)</td>
+            <td>Other</td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td><span class="badge badge-copyright">Copyrighted</span></td>
+            <td>Unpublished — manuscript in preparation</td>
+          </tr>
+          <tr>
+            <td>Medication Adherence Rating Scale (MARS)</td>
+            <td>Clinical Assessment Tools</td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td>Unpublished — manuscript in preparation</td>
+          </tr>
+          <tr>
+            <td>Scale to Assess Therapeutic Alliance – Patient Version (STAR-P)</td>
+            <td>Clinical Assessment Tools</td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td><span class="badge badge-unknown">Unknown</span></td>
+            <td>Unpublished — manuscript in preparation</td>
+          </tr>
+          <tr>
+  <td>Kansas Marital Satisfaction Scale (KMSS)</td>
+  <td>Other</td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td>Unpublished — manuscript in preparation</td>
+</tr>
+<tr>
+  <td>Relationship Satisfaction Scale – 10 items (RS-10)</td>
+  <td>Other</td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td>Unpublished — manuscript in preparation</td>
+</tr>
+<tr>
+  <td>Multidimensional Scale of Perceived Social Support (MSPSS)</td>
+  <td>Other</td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td>Unpublished — manuscript in preparation</td>
+</tr>
+<tr>
+  <td>Experiences in Close Relationships – Revised Short Form (ECR-RS)</td>
+  <td>Other</td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td>Unpublished — manuscript in preparation</td>
+</tr>
+<tr>
+  <td>Measure of Parenting Style (MOPS)</td>
+  <td>Other</td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td>Unpublished — manuscript in preparation</td>
+</tr>
+<tr>
+  <td>EMBU – Parental Rearing Practices Scale</td>
+  <td>Other</td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td>Unpublished — manuscript in preparation</td>
+</tr>
+<tr>
+  <td>WHO International Personality Disorder Examination – Screening Questionnaire (IPDE-SQ)</td>
+  <td>Personality &amp; Self-Concept</td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td><span class="badge badge-unknown">Unknown</span></td>
+  <td>Unpublished — manuscript in preparation</td>
+</tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+<script>
+  function filterScales() {
+    const search = document.getElementById('scaleSearch').value.toLowerCase();
+    const domain = document.getElementById('domainFilter').value.toLowerCase();
+    const doc = document.getElementById('docFilter').value.toLowerCase();
+    const rows = document.querySelectorAll('#scalesBody tr');
+    rows.forEach(row => {
+      const name = row.cells[0].textContent.toLowerCase();
+      const rowDomain = row.cells[1].textContent.toLowerCase();
+      const rowDoc = row.cells[2].textContent.toLowerCase();
+      const matchSearch = !search || name.includes(search);
+      const matchDomain = !domain || rowDomain.includes(domain);
+      const matchDoc = !doc || rowDoc.includes(doc);
+      row.style.display = matchSearch && matchDomain && matchDoc ? '' : 'none';
+    });
+  }
+</script>
+
+<div id="footer-placeholder"></div>
+
+<script>
+
+  fetch('nav.html')
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById('nav-placeholder').innerHTML = html;
+
+    // Active link
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#main-nav a').forEach(a => {
+      if (a.getAttribute('href') === current) a.classList.add('active');
+    });
+
+    // Hamburger — must run AFTER nav is injected
+    const btn = document.querySelector('.hamburger');
+    const nav = document.getElementById('main-nav');
+
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('open');
+    });
+
+    document.querySelectorAll('#main-nav a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        btn.classList.remove('open');
+      });
+    });
+  });
+  
+  fetch('footer.html')
+    .then(r => r.text())
+    .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+</script>
+
+</body>
+</html>
+</body>
+</html>
