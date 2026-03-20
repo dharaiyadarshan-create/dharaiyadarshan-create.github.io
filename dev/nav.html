@@ -76,3 +76,21 @@
   }
 </style>
 
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('main-nav');
+    const btn = document.querySelector('.hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  // Close menu when a link is clicked
+  document.querySelectorAll('#main-nav a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('main-nav').classList.remove('open');
+      document.querySelector('.hamburger').classList.remove('open');
+    });
+  });
+</script>
+
+
