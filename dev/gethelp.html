@@ -309,9 +309,27 @@
   .then(r => r.text())
   .then(html => {
     document.getElementById('nav-placeholder').innerHTML = html;
+
+    // Active link
     const current = window.location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('#main-nav a').forEach(a => {
       if (a.getAttribute('href') === current) a.classList.add('active');
+    });
+
+    // Hamburger — must run AFTER nav is injected
+    const btn = document.querySelector('.hamburger');
+    const nav = document.getElementById('main-nav');
+
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      btn.classList.toggle('open');
+    });
+
+    document.querySelectorAll('#main-nav a').forEach(a => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('open');
+        btn.classList.remove('open');
+      });
     });
   });
 

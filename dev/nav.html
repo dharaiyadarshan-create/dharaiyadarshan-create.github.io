@@ -1,7 +1,7 @@
 <header>
   <div class="header-inner">
     <a class="logo" href="index.html">GujPsych <span>Repository</span></a>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <button class="hamburger"  aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
     <nav id="main-nav">
@@ -76,19 +76,3 @@
   }
 </style>
 
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('main-nav');
-    const btn = document.querySelector('.hamburger');
-    nav.classList.toggle('open');
-    btn.classList.toggle('open');
-  }
-
-  // Close menu when a link is clicked
-  document.querySelectorAll('#main-nav a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.getElementById('main-nav').classList.remove('open');
-      document.querySelector('.hamburger').classList.remove('open');
-    });
-  });
-</script>
